@@ -34,6 +34,10 @@ class ContactListAdapter : RecyclerView.Adapter<ContactViewHolder>() {
         }
     }
 
+    override fun onViewRecycled(holder: ContactViewHolder) {
+        holder.recycle()
+    }
+
     override fun getItemViewType(position: Int): Int {
         return when (contacts[position]) {
             is SimpleContact -> ContactViewType.Simple.typeInt
