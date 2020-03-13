@@ -2,11 +2,11 @@ package com.example.uicomponents
 
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.uicomponents.adapter.contact.ContactListAdapter
 import com.example.uicomponents.data.DataProvider
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_scrolling.*
 import kotlinx.android.synthetic.main.content_scrolling.*
 
@@ -27,9 +27,8 @@ class ScrollingActivity : AppCompatActivity() {
     }
 
     private fun initList() {
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
         recyclerView.adapter = adapter
-
         adapter.contacts = DataProvider.stubContacts()
     }
 }
